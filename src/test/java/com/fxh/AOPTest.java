@@ -1,8 +1,10 @@
 package com.fxh;
 
 import com.fxh.annonation.Boy;
+import com.fxh.annonation.Config;
 import com.fxh.aop.Girl;
 import org.junit.jupiter.api.Test;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class AOPTest {
@@ -16,6 +18,13 @@ public class AOPTest {
     @Test
     void test2() {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring-annonation.xml");
+        Boy boy = (Boy) context.getBean("boy");
+        boy.coding();
+    }
+
+    @Test
+    void test3() {
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Config.class);
         Boy boy = (Boy) context.getBean("boy");
         boy.coding();
     }

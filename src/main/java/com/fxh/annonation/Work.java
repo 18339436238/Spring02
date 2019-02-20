@@ -15,11 +15,11 @@ public class Work {
 
     @Before("abc()")
     public void printTime1(){
-        System.out.println(System.currentTimeMillis());
+        System.out.println("work1: "+ System.currentTimeMillis());
     }
 
     @After("abc()")
     public void printTime2(){
-        System.out.println(System.currentTimeMillis());
+        System.out.println("work2: "+ System.currentTimeMillis());
     }
 }
